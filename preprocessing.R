@@ -17,7 +17,7 @@ fit <- lmFit(expr, design)
 fit <- eBayes(fit)
 
 res <- topTable(fit, coef=2, number=Inf, sort.by="P")
-sig <- subset(res, P.Value < 0.05 & abs(logFC) > 1)
+sig <- subset(res, P.Value < 0.05 & abs(logFC) > 0.5)
 
 # Save data as csv
 write.csv(UROMOL_TaLG.teachingcohort, "./data/UROMOL.csv", quote = FALSE, row.names = FALSE)
